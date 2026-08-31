@@ -1,1 +1,1 @@
-python.exe .\yt-dlp-mario.py
+python %~dp0/yt-dlp-mario.py
