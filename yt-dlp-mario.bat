@@ -1,0 +1,1 @@
+python.exe .\yt-dlp-mario.py
