@@ -1,9 +1,16 @@
 import yt_dlp
+from spotify_to_ytmusic import search_track, transfer_playlist, update_playlist
 
 def main():
     end = 0
     while (end != '1'):
         url = input("Video or playlist: ")
+        if (url.__contains__("spotify")):
+            if (url.__contains__("open.spotify.com/playlist")):
+                playlistId = transfer_playlist(url, privacy="UNLISTED")
+                url = f"https://music.youtube.com/playlist?list={playlistId}"
+            else:
+                url = search_track(url)
         format = input("Audio(1), Video(2): ")
         if (format == '1'):
             download_audio(url)
